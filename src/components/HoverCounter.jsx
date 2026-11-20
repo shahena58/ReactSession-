@@ -85,9 +85,12 @@
 // 
 
 
-export default function HoverCounter({count, incrementCounter, theme}) {
+export default function HoverCounter({count, incrementCounter, theme, switchTheme}) {
     const style =  theme === `dark`?  {backgroundColor: `#000000` , color: `#ffffff` }: null
   return (
-    <h1 onMouseOver={incrementCounter} style={style} >HoverCounter {count}</h1>
+   <div>
+     <h1 onMouseOver={incrementCounter} style={style} >HoverCounter {count}</h1>
+     <button onClick={switchTheme}> change theme </button>
+   </div>
   )
 }
